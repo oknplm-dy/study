@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./vue.js"></script>
+  <style>
+    li{list-style: none; height: 70px; padding-top: 40px; font-size: 24px;}
+    #left{float: left;}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="left">
+      <img src="./weige.jpg" alt="">
+    </div>
+    <ul>
+      <li>单价：{{price}}</li>
+      <li>数量：<button @click="num==0?0:num--">-</button>
+        {{num}}
+        <button @click="num++">+</button>
+      </li>
+      <li>总价格：{{totalPrice | ren}}</li>
+    </ul>
+  </div>
+  <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        price:3,
+        num:0
+      },
+      computed:{
+        totalPrice(){
+          return this.price*this.num
+        }
+      },
+      filters:{
+        ren(value){
+          return "￥"+value
+        }
+      }
+    })
+  </script>
+</body>
+</html>

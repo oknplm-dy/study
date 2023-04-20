@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- input 中的v-model用于在表单控件元素 -->
+    <input type="text" v-model="msg">
+    <!--                数据双向绑定 -->
+  </div>
+  <script>
+    var vm = new Vue({
+      el:"#app",
+      data:{
+        msg:"正在绑"
+      },
+      watch:{//监听下面msg
+        msg(newData,oldData){
+          console.log("旧的值是: "+oldData,"新的值是: "+newData)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

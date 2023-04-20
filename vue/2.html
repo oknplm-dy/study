@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button @click="showInfo">论如何教你发家致富！</button>
+    <p>{{msg}}</p>
+  </div>
+  <script>
+    var vm = new Vue({
+      el:'#app',
+      data: {
+        msg: '好好学习'
+      },
+      methods: {
+        showInfo(){
+          this.msg = '天真,微信v我50,给你50个富婆号码。'
+          alert(this.msg)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
